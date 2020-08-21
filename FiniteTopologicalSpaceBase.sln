@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiniteTopologicalSpaceBase", "FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase.csproj", "{97980E0E-E265-464F-B096-C41F8D4F9CAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97980E0E-E265-464F-B096-C41F8D4F9CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97980E0E-E265-464F-B096-C41F8D4F9CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97980E0E-E265-464F-B096-C41F8D4F9CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97980E0E-E265-464F-B096-C41F8D4F9CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DF97D8C-3B0E-46CA-A8D0-7B18B6FF0E81}
+	EndGlobalSection
+EndGlobal

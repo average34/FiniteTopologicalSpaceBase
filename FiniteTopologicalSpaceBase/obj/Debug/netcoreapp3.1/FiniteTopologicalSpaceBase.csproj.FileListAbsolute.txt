@@ -1,0 +1,13 @@
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\bin\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.exe
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\bin\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.deps.json
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\bin\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.runtimeconfig.json
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\bin\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.runtimeconfig.dev.json
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\bin\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.dll
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\bin\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.pdb
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\obj\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.csprojAssemblyReference.cache
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\obj\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.csproj.CoreCompileInputs.cache
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\obj\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.AssemblyInfoInputs.cache
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\obj\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.AssemblyInfo.cs
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\obj\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.dll
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\obj\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.pdb
+C:\Users\R K\source\repos\FiniteTopologicalSpaceBase\FiniteTopologicalSpaceBase\obj\Debug\netcoreapp3.1\FiniteTopologicalSpaceBase.genruntimeconfig.cache

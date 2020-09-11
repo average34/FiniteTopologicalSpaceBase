@@ -19,6 +19,9 @@ namespace FiniteTopologicalSpaceBase.Topology
     {
 
         #region メンバ変数
+        /// <summary>
+        /// 対象Tの範囲
+        /// </summary>
         public SortedSet<T> Universe 
         { 
             get;
@@ -193,7 +196,7 @@ namespace FiniteTopologicalSpaceBase.Topology
         public virtual void Update()
         {
             if (this is null) return;
-            else if (Universe is null) this.UniverseSetter();
+            if (Universe is null) this.UniverseSetter();
 
             if (!isOKUniverse(Universe)) throw new Exception("Domainが不正です");
 

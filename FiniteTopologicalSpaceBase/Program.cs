@@ -18,6 +18,7 @@ namespace FiniteTopologicalSpaceBase
             SetY.Add(element.Four);
             SetY.Add(element.Five);
 
+
             Console.WriteLine("Hello World!");
             Console.WriteLine(SetX.ToString("G"));
             Console.WriteLine(SetY.ToString("D"));
@@ -60,6 +61,21 @@ namespace FiniteTopologicalSpaceBase
             Console.WriteLine(rel3.ToString());
             Console.WriteLine(rel3.ToString(null));
             Console.WriteLine(rel3.ToString("D"));
+
+
+            Console.WriteLine("二項関係のテスト4:異なる定義域からなす関係");
+            var SetA = new FiniteSet<alphabet>();
+            SetA.Add(alphabet.A);
+            SetA.Add(alphabet.C);
+            SetA.Add(alphabet.F);
+            var rel4 = new BinaryRelation<element, alphabet>(SetY,SetA);
+            rel4.Add((element.Two,alphabet.A));
+            rel4.Add((element.Four,alphabet.F));
+            rel4.Add((element.Five,alphabet.F));
+            Console.WriteLine(rel4);
+            Console.WriteLine(rel4.Complement());
+            Console.WriteLine(rel4.Converse());
+
             Console.ReadLine();
 
         }

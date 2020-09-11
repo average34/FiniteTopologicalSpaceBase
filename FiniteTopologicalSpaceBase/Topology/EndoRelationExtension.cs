@@ -203,10 +203,6 @@ namespace FiniteTopologicalSpaceBase.Topology
 
 
 
-
-
-
-
         #endregion
         #region 自己関係の場合に考える性質
 

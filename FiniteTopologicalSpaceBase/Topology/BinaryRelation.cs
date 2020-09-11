@@ -11,10 +11,12 @@ using System.Runtime.CompilerServices;
 namespace FiniteTopologicalSpaceBase.Topology
 {
     /// <summary>
-    /// 自己関係（始域と終域の一致する二項関係）を表すクラス。
-    /// 正確には自己関係におけるグラフGのことであり、対象Tの範囲はSortedSet<T> Universeで指定する。
+    /// 二項関係を表すクラス。
+    /// 正確には二項関係におけるグラフGのことであり、対象T1の範囲である始域はSortedSet<T1> Domainで指定する。
+    /// 対象T2の範囲である終域はSortedSet<T2> Codomainで指定する。
     /// </summary>
-    /// <typeparam name="T">対象の型。enum,FiniteSet<TEnum>,FamilyOfSubsets<TEnum>が入ることを想定</typeparam>
+    /// <typeparam name="T1"></typeparam>
+    /// <typeparam name="T2"></typeparam>
     public class BinaryRelation<T1,T2> : SortedSet<ValueTuple<T1, T2>>, IFormattable
     {
 
@@ -275,8 +277,8 @@ namespace FiniteTopologicalSpaceBase.Topology
         public virtual void Update()
         {
             if (this is null) return;
-            else if (Domain is null) this.DomainGenerator();
-            else if (Codomain is null) this.CodomainGenerator();
+            if (Domain is null) this.DomainGenerator();
+            if (Codomain is null) this.CodomainGenerator();
 
             if(!isOKDomain(Domain)) throw new Exception("Domainが不正です");
             if(!isOKCodomain(Codomain)) throw new Exception("Codomainが不正です");

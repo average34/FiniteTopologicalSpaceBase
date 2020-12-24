@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "M2AzRQW6tGTasEwlGisuJhyQYwr/vIWFLZUyzzdEEOpyusdE8LPsLt+mMu0SCeeKXOhfvjCKFY6ybmgOAcUtwA==",
+  "dgSpecHash": "reEkCDQfGL4iYeGrMl2+mWURNgiqkEXR5VdzcQMMMYeoN3QeCZZG0HhhNODOnOrAi29bf+3ia7ZYiFDK4NXA8A==",
   "success": true,
   "projectFilePath": "C:\\Users\\R K\\source\\repos\\FiniteTopologicalSpaceBase\\FiniteTopologicalSpaceBase\\FiniteTopologicalSpaceBase.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\R K\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\R K\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
+  ],
   "logs": []
 }

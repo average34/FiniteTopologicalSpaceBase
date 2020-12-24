@@ -70,6 +70,7 @@ namespace FiniteTopologicalSpaceBase.Topology
         }
 
 
+
         /// <summary>
         /// 有限集合を文字列として出力するメソッド
         /// </summary>
@@ -133,6 +134,7 @@ namespace FiniteTopologicalSpaceBase.Topology
         #region メソッド
 
 
+
         /// <summary>
         /// 予約してみたけどアップデートするもんないわ
         /// </summary>
@@ -142,5 +144,25 @@ namespace FiniteTopologicalSpaceBase.Topology
 
 
         #endregion
+    }
+
+    public class FiniteSetComparer<TEnum> : IEqualityComparer<FiniteSet<TEnum>>
+        where TEnum : Enum
+    {
+        public FiniteSetComparer()
+        {
+        }
+
+        public bool Equals([AllowNull] FiniteSet<TEnum> x, [AllowNull] FiniteSet<TEnum> y)
+        {
+            //値参照して同じならtrue
+            if (x.SequenceEqual(y)) return true;
+            return false;
+        }
+
+        public int GetHashCode([DisallowNull] FiniteSet<TEnum> obj)
+        {
+            return obj.ToString().GetHashCode();
+        }
     }
 }

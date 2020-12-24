@@ -1,12 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
+using System.Linq;
 
 namespace FiniteTopologicalSpaceBase.Topology
 {
     public static class FamilyOfSubsetsExtension
     {
 
+        
+
+        #region 基礎的な演算
+
+
+
+        /// <summary>
+        /// 集合の濃度を返す
+        /// </summary>
+        /// <typeparam name="TEnum"></typeparam>
+        /// <param name="set">集合</param>
+        /// <returns>濃度</returns>
+        public static int Cardinality<TEnum>(this FamilyOfSubsets<TEnum> subsets)
+            where TEnum : Enum
+        {
+            return subsets.Count;
+        }
 
         /// <summary>
         /// 部分集合族の総和を取る
@@ -49,6 +68,10 @@ namespace FiniteTopologicalSpaceBase.Topology
             return retSet;
         }
 
+        #endregion
+
+
+        #region 判定（return bool）
         /// <summary>
         /// 集合族に空集合があるかどうかを判定（集合族自体が空なら偽）
         /// </summary>
@@ -116,7 +139,8 @@ namespace FiniteTopologicalSpaceBase.Topology
                 foreach (FiniteSet<TEnum> subset2 in subsets)
                 {
                     FiniteSet<TEnum> diffSet = subset1.Diff(subset2);
-                    if (!subsets.Contains(diffSet)) return false;
+                    IEqualityComparer<FiniteSet<TEnum>> comparer = new FiniteSetComparer<TEnum>();
+                    if (!subsets.Contains(diffSet, comparer)) return false;
                 }
             }
 
@@ -131,7 +155,7 @@ namespace FiniteTopologicalSpaceBase.Topology
         /// </summary>
         /// <param name="subsets">集合族</param>
         /// <param name="universe">全体集合かどうか判定する集合</param>
-        /// <returns>補-完備</returns>
+        /// <returns>与えた集合は全体集合の必要条件を満たす</returns>
         public static bool isUniverseOK<TEnum>(this FamilyOfSubsets<TEnum> subsets, FiniteSet<TEnum> universe)
             where TEnum : Enum
         {
@@ -213,6 +237,71 @@ namespace FiniteTopologicalSpaceBase.Topology
         }
 
         /// <summary>
+        /// （有限）位相空間かどうか。集合族が開集合族の定義を満たすかどうか。
+        /// 
+        /// </summary>
+        /// <param name="subsets">集合族</param>
+        /// <param name="universe">全体集合・台集合</param>
+        /// <returns>（有限）位相空間</returns>
+        public static bool isTopological<TEnum>(this FamilyOfSubsets<TEnum> subsets, FiniteSet<TEnum> universe)
+            where TEnum : Enum
+        {
+            //集合がなければ偽
+            if (subsets == null || subsets.Count == 0) return false;
+            //空集合がなければ偽
+            else if (!subsets.isContainsEmpty()) return false;
+            //台集合がなければ偽
+            else if (!subsets.Contains(universe)) return false;
+            //和集合について閉じてなければ偽
+            else if (!subsets.isSumComplete()) return false;
+            //交叉について閉じてなければ偽
+            else if (!subsets.isProductComplete()) return false;
+
+            //条件を満たしているので真
+            return true;
+        }
+
+        /// <summary>
+        /// 密着位相かどうか。
+        /// </summary>
+        /// <param name="subsets">集合族</param>
+        /// <param name="universe">全体集合・台集合</param>
+        /// <returns>密着位相である</returns>
+        public static bool isIniscrete<TEnum>(this FamilyOfSubsets<TEnum> subsets, FiniteSet<TEnum> universe)
+            where TEnum : Enum
+        {
+            //まず位相空間でなければ偽
+            if (!subsets.isTopological(universe)) return false;
+            //濃度が2でなければ偽
+            else if (subsets.Count != 2) return false;
+
+            //条件を満たしているので真
+            return true;
+        }
+
+        /// <summary>
+        /// 離散位相かどうか。
+        /// </summary>
+        /// <param name="subsets">集合族</param>
+        /// <param name="universe">全体集合・台集合</param>
+        /// <returns>離散位相である</returns>
+        public static bool isDiscrete<TEnum>(this FamilyOfSubsets<TEnum> subsets, FiniteSet<TEnum> universe)
+            where TEnum : Enum
+        {
+            //まず位相空間でなければ偽
+            if (!subsets.isTopological(universe)) return false;
+            //濃度が2^universe.Countでなければ偽
+            else if (subsets.Count != ((BigInteger)1 << universe.Count)) return false;
+
+            //条件を満たしているので真
+            return true;
+        }
+
+
+        #endregion
+
+        #region 発展的な演算
+        /// <summary>
         /// 部分集合族の包含関係 ⊆ から 自己関係 R を生成するメソッド
         /// </summary>
         /// <typeparam name="TEnum"></typeparam>
@@ -246,7 +335,10 @@ namespace FiniteTopologicalSpaceBase.Topology
 
             return retRel;
 
-        } 
+        }
+
+
+        #endregion
 
     }
 }

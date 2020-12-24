@@ -11,7 +11,8 @@ namespace FiniteTopologicalSpaceBase.Topology
     /// <summary>
     /// 部分集合族のクラス。TEnum全体の集合が台集合。
     /// </summary>
-    public class FamilyOfSubsets<TEnum> : SortedSet<FiniteSet<TEnum>>, IFormattable, IComparable<FamilyOfSubsets<TEnum>>
+    public class FamilyOfSubsets<TEnum> : SortedSet<FiniteSet<TEnum>>, IFormattable,
+        IComparable<FamilyOfSubsets<TEnum>>
         where TEnum : Enum
     {
         #region メンバ変数
@@ -70,6 +71,7 @@ namespace FiniteTopologicalSpaceBase.Topology
             throw new NotImplementedException();
         }
 
+
         public string ToString(string format = "D", IFormatProvider formatProvider = null)
         {
             if (format is null)
@@ -95,5 +97,18 @@ namespace FiniteTopologicalSpaceBase.Topology
         }
 
         #endregion
+
+
+        /// <summary>
+        /// 集合族の中に要素である集合が含まれているかどうか
+        /// </summary>
+        /// <param name="item">有限集合</param>
+        /// <returns>含まれている</returns>
+        public override bool Contains(FiniteSet<TEnum> item)
+        {
+
+            IEqualityComparer<FiniteSet<TEnum>> comparer = new FiniteSetComparer<TEnum>();
+            return Enumerable.Contains(this , item, comparer);
+        }
     }
 }

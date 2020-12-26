@@ -22,66 +22,12 @@ namespace FiniteTopologicalSpaceBase
 
 
             Console.WriteLine("Hello World!");
-            Console.WriteLine(SetY.PowerSet().Contains(SetY));
-            Console.WriteLine(SetY.PowerSet().Contains(SetX));
+            //Console.WriteLine(SetY.PowerSet().Contains(SetY));
+            //Console.WriteLine(SetY.PowerSet().Contains(SetX));
 
-            SetZ.OpenSetsList();
-
-            //Console.WriteLine(SetX.ToString("G"));
-            //Console.WriteLine(SetY.ToString("D"));
-            //Console.WriteLine(SetX.And(SetY as FiniteSet<element>));
-            //Console.WriteLine(SetX.Or(SetY as FiniteSet<element>));
-            //Console.WriteLine(SetX.Diff(SetY as FiniteSet<element>));
-            //Console.WriteLine(SetX.Xor(SetY as FiniteSet<element>));
-            //Console.WriteLine(new FiniteSet<element>());
-            //Console.WriteLine(SetX.PowerSet());
-            //Console.WriteLine(SetY.PowerSet());
-            //Console.WriteLine(SetX.PowerSet().ToString("G"));
-            //Console.WriteLine(SetY.PowerSet().ToString("G"));
-
-            //Console.WriteLine("二項関係のテスト1");
-            //var rel = new EndoRelation<element> ();
-            //rel.Add((element.One, element.Two));
-            //rel.Add((element.Two, element.Three));
-            //rel.Add((element.Three, element.Four));
-            //rel.Add((element.Four, element.Five));
-            //rel.Add((element.Five, element.Five));
-            //Console.WriteLine(rel.ToString());
-            //Console.WriteLine(rel.ToString("G"));
-            //Console.WriteLine(rel.ToString("F"));
-            //Console.WriteLine(rel.ToString("D"));
-            //Console.WriteLine(rel.ToString("X"));
-
-
-            //Console.WriteLine("二項関係のテスト2");
-            //var rel2 = new EndoRelation<FiniteSet<element>>();
-            //rel2.Add((SetX, SetY));
-            //rel2.Add((SetX, SetX));
-            //Console.WriteLine(rel2);
-            //Console.WriteLine(rel2.ToString());
-            //Console.WriteLine(rel2.ToString(null));
-            //Console.WriteLine(rel2.ToString("D"));
-
-            //Console.WriteLine("二項関係のテスト3:部分集合族のなす関係");
-            //EndoRelation<FiniteSet<element>> rel3 = (SetY.PowerSet()).CreateSubsetRelation(SetY);
-            //Console.WriteLine(rel3);
-            //Console.WriteLine(rel3.ToString());
-            //Console.WriteLine(rel3.ToString(null));
-            //Console.WriteLine(rel3.ToString("D"));
-
-
-            //Console.WriteLine("二項関係のテスト4:異なる定義域からなす関係");
-            //var SetA = new FiniteSet<alphabet>();
-            //SetA.Add(alphabet.A);
-            //SetA.Add(alphabet.C);
-            //SetA.Add(alphabet.F);
-            //var rel4 = new BinaryRelation<element, alphabet>(SetY,SetA);
-            //rel4.Add((element.Two,alphabet.A));
-            //rel4.Add((element.Four,alphabet.F));
-            //rel4.Add((element.Five,alphabet.F));
-            //Console.WriteLine(rel4);
-            //Console.WriteLine(rel4.Complement());
-            //Console.WriteLine(rel4.Converse());
+            //5.OpenSetsListOutMethod();
+            6.OpenSetsListOutMethod();
+            //8.OpenSetsListOutMethod();
 
             Console.ReadLine();
 
